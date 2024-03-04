@@ -3,7 +3,8 @@ require('dotenv').config
 const PORT = process.env.PORT;
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
-mongoose.connect('mongodb+srv://gallary-app:gallaryApp@gallary-app.zv2pkua.mongodb.net/?retryWrites=true&w=majority',{family:4},(err)=>{
+
+mongoose.connect('mongodb+srv://vishalkumarIshdev:t5uvO8vRXsL8GpX9@cluster0.tg44sis.mongodb.net/gallary?retryWrites=true&w=majority',{family:4},(err)=>{
     if(!err){
         console.log('Database connected successfully');
         // console.log('NODE ENV ' ,process.env.NODE_ENV);

@@ -1,5 +1,5 @@
 const userModel = require('../models/user.model');
-const multer = require('multer');
+
 exports.register = async (req, res) => {
     const body = req.body;
     const data = {
@@ -23,6 +23,7 @@ exports.register = async (req, res) => {
         })
     }
 }
+
 exports.filter = async (req,res)=>{
     try{
         const data = await userModel.find();

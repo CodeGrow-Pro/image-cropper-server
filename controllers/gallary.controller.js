@@ -32,6 +32,27 @@ exports.addImageInGallary = async (req,res)=>{
     }
 }
 
+exports.photoUploaded = async (req, res) => {
+    const body = req.body;
+    const data = {
+        imagesPath: body.imagePath,
+        userId:req.params.id
+    }
+
+    try {
+        const user = await gallaryModel.create(data);
+        return res.status(200).json({
+            message:"upload data successfully!",
+            data:user
+        })
+    }catch(err){
+        console.log(err.message)
+        return res.status(500).send({
+            message:"internal server error!"
+        })
+    }
+}
+
 exports.filterImages = async (req,res)=>{
         const  reqData = {}
         if(req.query.userId){
